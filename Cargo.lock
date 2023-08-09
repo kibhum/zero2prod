@@ -2702,6 +2702,7 @@ dependencies = [
  "dotenv 0.10.1",
  "env_logger",
  "log",
+ "once_cell",
  "reqwest",
  "serde 1.0.176",
  "sqlx",
