@@ -18,6 +18,7 @@ async fn main() -> std::io::Result<()> {
         "{}:{}",
         configuration.application.host, configuration.application.port
     );
+    let timeout = configuration.email_client.timeout();
     // Build an `EmailClient` using `configuration`
     let sender_email = configuration
         .email_client
@@ -27,6 +28,7 @@ async fn main() -> std::io::Result<()> {
         configuration.email_client.base_url,
         sender_email,
         configuration.email_client.authorization_token,
+        timeout,
     );
     // let connection_pool =
     //     PgPool::connect(&configuration.database.connection_string().expose_secret())
